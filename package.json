@@ -1,0 +1,91 @@
+{
+  "name": "wallaby-1558",
+  "version": "0.0.0",
+  "dependencies": {
+    "global": "^4.3.1",
+    "jquery": "~2.2.0",
+    "moment": "^2.20.1",
+    "moment-timezone": "^0.5.14",
+    "react-module-container": "^1.0.1538"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.6.42",
+    "@types/angular-mocks": "^1.5.8",
+    "@types/angular-route": "^1.3.3",
+    "@types/angular-translate": "^2.4.34",
+    "@types/es6-shim": "^0.31.32",
+    "@types/jasmine": "^2.8.6",
+    "@types/jquery": "~2.0.37",
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "bower-art-resolver": "^2.0.9",
+    "browserify": "^13.1.0",
+    "chromedriver": "^2.34.1",
+    "command-line-args": "^3.0.5",
+    "duplicate-package-checker-webpack-plugin": "^2.1.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "fetch-mock": "^5.13.1",
+    "glob": "~6.0.4",
+    "grunt-jscs": "^3.0.1",
+    "grunt-run": "^0.8.0",
+    "grunt-webpack": "^3.0.2",
+    "html-loader": "^0.4.5",
+    "jasmine-core": "~2.7.0",
+    "jest": "~22.4.2",
+    "jest-teamcity-reporter": "^0.9.0",
+    "json-loader": "^0.5.7",
+    "karma-chrome-launcher": "^2.2.0",
+    "ng-annotate-loader": "^0.6.1",
+    "ng-annotate-webpack-plugin": "^0.2.1-pre",
+    "nock": "^9.1.6",
+    "node-cmd": "^1.1.1",
+    "node-http-proxy": "*",
+    "raw-loader": "^0.5.1",
+    "react-dom": "15.4.2",
+    "ts-jest": "~22.4.0",
+    "tslint": "~3.15.1",
+    "tslint-config-wix": "^1.0.30",
+    "typescript": "^2.7.1",
+    "uglify-js": "2.8.29",
+    "webpack": "^3.11.0",
+    "webpack-bundle-analyzer": "^2.10.0",
+    "webpack-dev-server": "^2.11.0"
+  },
+  "scripts": {
+    "release": "node_modules/wix-gruntfile/scripts/release.sh",
+    "start": "grunt serve",
+    "build": ":",
+    "test": "node_modules/wix-gruntfile/scripts/test.sh && jest --maxWorkers=2 --silent",
+    "test:jsdom": "jest --silent",
+    "test:watchAll": "jest --watchAll --silent",
+    "postinstall": "node_modules/wix-gruntfile/scripts/postinstall.sh"
+  },
+  "jest": {
+    "testURL": "http://localhost:8880",
+    "testResultsProcessor": "jest-teamcity-reporter",
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "app/tsconfig.json"
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testMatch": [
+      "**/app/**/*.spec.esm.ts",
+      "**/app/**/*.html",
+      "**/.tmp/**/*.html"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "setupTestFrameworkScriptFile": "./test-setup.js"
+  },
+  "private": true
+}
