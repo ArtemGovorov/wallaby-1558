@@ -58,8 +58,7 @@
     "build": ":",
     "test": "node_modules/wix-gruntfile/scripts/test.sh && jest --maxWorkers=2 --silent",
     "test:jsdom": "jest --silent",
-    "test:watchAll": "jest --watchAll --silent",
-    "postinstall": "node_modules/wix-gruntfile/scripts/postinstall.sh"
+    "test:watchAll": "jest --watchAll --silent"
   },
   "jest": {
     "testURL": "http://localhost:8880",
